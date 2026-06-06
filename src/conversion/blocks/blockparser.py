@@ -1,0 +1,13 @@
+from typing import Protocol
+
+from src.models.blocktypes import BlockType
+from src.models.htmlnode import HTMLNode
+
+
+class BlockParser(Protocol):
+    def valid_interruptions(self) -> list[BlockType]: ...
+    def still_matches(
+        self, node: HTMLNode, new_line: str, interrupted: bool
+    ) -> bool: ...
+    def close(self, node: HTMLNode): ...
+    def matches(self, new_line: str) -> tuple[HTMLNode | None, bool]: ...

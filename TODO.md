@@ -18,4 +18,4 @@ A static-site generator for personal use, just to make it easier to make blogs a
 
 ### Done
 
-- [ ] Repo creation
+- [x] Repo creation

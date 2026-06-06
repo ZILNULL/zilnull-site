@@ -12,3 +12,27 @@ def copy_folder(src: Path, dst: Path):
         shutil.rmtree(dst)
 
     shutil.copytree(src, dst)
+
+
+def read_file(file: Path) -> str:
+    if not file.exists():
+        raise FileNotFoundError("The provided file does not exist.")
+    if file.exists() and file.is_dir():
+        raise FileExistsError("Target path points to a directory.")
+
+    with open(file, "r") as f:
+        content = f.read()
+
+    return content
+
+
+def write_file(file: Path, content: str | None = None):
+    if file.exists() and file.is_dir():
+        raise FileExistsError("Target path points to a directory.")
+
+    try:
+        content = content if content is not None else ""
+        with open(file, "w") as f:
+            f.write(content)
+    except Exception as e:
+        raise e
