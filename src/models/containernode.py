@@ -17,4 +17,14 @@ class ContainerNode(HTMLNode):
         return stringified
 
     def to_html(self) -> str:
-        return ""
+        parts = [child.to_html() for child in self.children if child.to_html()]
+        inner = "\n".join(parts)
+
+        if self.blocktype == BlockType.DOCUMENT:
+            return inner
+
+        tag = self.tag
+        if tag:
+            return f"<{tag}>\n{inner}\n</{tag}>"
+
+        return inner

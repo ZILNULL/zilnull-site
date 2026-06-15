@@ -1,0 +1,30 @@
+blockquote {
+  border: none;
+  background: none;
+  position: relative;
+  margin: 2.25rem 0;
+  padding: 0.25rem 1.25rem 0.25rem 3rem;
+  font-style: italic;
+}
+
+blockquote::before {
+  content: '\201C';
+  position: absolute;
+  left: -0.25rem;
+  top: -1rem;
+  font-size: 5.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--violet);
+  opacity: 0.28;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+blockquote p {
+  color: var(--text-muted);
+  line-height: 1.95;
+  margin: 0.25rem 0;
+}
+
+blockquote > *:first-child { margin-top: 0; }

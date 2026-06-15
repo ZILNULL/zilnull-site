@@ -6,17 +6,15 @@ def valid_interruptions() -> list[BlockType]:
     return []
 
 
-def new(text: str) -> HTMLNode:
-    return HTMLNode()
-
-
 def still_matches(node: HTMLNode, new_line: str, interrupted: bool) -> bool:
+    node.matched = False
     return False
 
 
 def close(node: HTMLNode):
-    return None
+    if node.value is not None:
+        node.value = node.value.strip()
 
 
 def matches(new_line: str) -> tuple[HTMLNode | None, bool]:
-    return None, not new_line.strip()
+    return None, False

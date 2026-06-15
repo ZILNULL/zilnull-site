@@ -1,0 +1,43 @@
+code {
+  font-family: "Courier New", "Lucida Console", monospace;
+  font-size: 0.84em;
+  background: #080808;
+  color: var(--teal);
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border-hi);
+}
+
+pre {
+  background: #000;
+  border: 1px solid var(--border-hi);
+  border-top: none;
+  padding: 2.1rem 1.25rem 1.1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+pre::before {
+  content: '◆  TERMINAL';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: #141414;
+  border-top: 1px solid var(--border-hi);
+  border-bottom: 1px solid var(--border-hi);
+  padding: 0.28rem 0.8rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--green);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  text-shadow: 0 0 10px rgba(51, 255, 102, 0.45);
+}

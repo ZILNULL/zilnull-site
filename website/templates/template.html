@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/static/index.css" />
 </head>
 <body>
-  {{ content }}
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="site-name">ZILØ</span>
+        <button class="toggle-btn" onclick="toggleSidebar()" aria-label="Close sidebar">&#x2715;</button>
+      </div>
+      <nav class="sidebar-nav">
+        {{ toc }}
+      </nav>
+    </aside>
+    <div class="main-wrapper">
+      <button class="open-btn" id="open-btn" onclick="toggleSidebar()" aria-label="Open sidebar">&#9776;</button>
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var sidebar = document.getElementById("sidebar");
+      var openBtn = document.getElementById("open-btn");
+      if (localStorage.getItem("sidebar-collapsed") === "true") {
+        sidebar.classList.add("collapsed");
+        openBtn.classList.add("visible");
+      }
+    })();
+
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      var openBtn = document.getElementById("open-btn");
+      sidebar.classList.toggle("collapsed");
+      openBtn.classList.toggle("visible");
+      localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+    }
+  </script>
 </body>
 </html>

@@ -1,6 +1,15 @@
 from src.models.blocktypes import BlockType
 
 
+def _escape_html(text: str) -> str:
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
 class HTMLNode:
     def __init__(
         self,
@@ -14,12 +23,13 @@ class HTMLNode:
         self.blocktype = blocktype
         self.tag = tag
         self.value = value
-        self.children = children
+        self.children: list["HTMLNode"] = children if children is not None else []
         self.props = props
         self.matched = matched
+        self.consumed = False
 
     def __eq__(self, other: object):
-        if not isinstance(other, "HTMLNode"):
+        if not isinstance(other, HTMLNode):
             return False
 
         equal = (
@@ -45,4 +55,4 @@ class HTMLNode:
         stringified = ""
         for key in self.props:
             stringified += f'{key}="{self.props[key]}" '
-        return stringified[: len(stringified) - 1]  # remove trailing white space
+        return stringified[: len(stringified) - 1]

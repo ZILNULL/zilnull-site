@@ -1,0 +1,17 @@
+:root {
+  --bg:          #000000;
+  --bg-alt:      #060606;
+  --border:      #242424;
+  --border-hi:   #404040;
+  --text:        #c8c8c8;
+  --text-muted:  #545454;
+  --violet:      #cc99ff;
+  --violet-dim:  #7744aa;
+  --teal:        #55ddbb;
+  --teal-dim:    #2d7a68;
+  --red:         #ff7777;
+  --red-dim:     #993333;
+  --green:       #33ff66;
+  --sidebar-w:   240px;
+  --ease:        0.12s ease;
+}

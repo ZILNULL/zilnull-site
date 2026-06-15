@@ -8,8 +8,7 @@ def valid_interruptions() -> list[BlockType]:
 
 
 def new(text: str, h_count: int = 1) -> HTMLNode:
-    tag = f"h{h_count}"
-    return LeafNode(BlockType.ATX_HEADING, text, tag=tag)
+    return LeafNode(BlockType.ATX_HEADING, text, tag=f"h{h_count}")
 
 
 def still_matches(node: HTMLNode, new_line: str, interrupted: bool) -> bool:
@@ -22,16 +21,15 @@ def close(node: HTMLNode):
 
 
 def matches(new_line: str) -> tuple[HTMLNode | None, bool]:
-    start_spaces = new_line.count(" ", 0, 4)
-    if start_spaces > 3:
+    stripped = new_line.lstrip(" ")
+    if len(new_line) - len(stripped) > 3:
         return None, False
 
-    new_line = new_line.lstrip()
-    if new_line[0] != "#":
+    if not stripped or stripped[0] != "#":
         return None, False
 
     h_count = 0
-    for c in new_line:
+    for c in stripped:
         if c != "#":
             break
         h_count += 1
@@ -39,22 +37,17 @@ def matches(new_line: str) -> tuple[HTMLNode | None, bool]:
     if h_count > 6:
         return None, False
 
-    if not new_line[h_count].isspace():
+    rest = stripped[h_count:]
+    if rest and rest[0] not in (" ", "\t"):
         return None, False
 
-    # Strip trailing # and spaces:
-    new_line = new_line.strip()
-    last_index = len(new_line)
-    while new_line[last_index] == "#":
-        last_index -= 1
+    content = rest.lstrip(" \t").rstrip(" \t")
 
-        if last_index == 0 or (
-            new_line[last_index] != "#" and not new_line[last_index].isspace()
-        ):
-            break
+    if content.endswith("#"):
+        i = len(content) - 1
+        while i >= 0 and content[i] == "#":
+            i -= 1
+        if i < 0 or content[i] in (" ", "\t"):
+            content = content[: i + 1].rstrip(" \t") if i >= 0 else ""
 
-        if new_line[last_index].isspace():
-            new_line = new_line[:last_index]
-            break
-
-    return new(new_line, h_count), True
+    return new(content, h_count), True

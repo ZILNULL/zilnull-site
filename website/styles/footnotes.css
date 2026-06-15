@@ -1,0 +1,29 @@
+sup a {
+  color: var(--violet);
+  text-decoration: none;
+  font-size: 0.72em;
+  border: none;
+}
+
+sup a:hover { color: var(--violet-dim); border: none; }
+
+.footnotes {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-hi);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "Courier New", monospace;
+}
+
+.footnotes ol { padding-left: 1.5rem; }
+
+.footnotes li { margin: 0.5rem 0; line-height: 1.6; }
+
+.footnote-back {
+  color: var(--violet-dim);
+  border: none;
+  font-size: 0.8rem;
+}
+
+.footnote-back:hover { color: var(--violet); border: none; }

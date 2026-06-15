@@ -1,0 +1,56 @@
+.toc-list { list-style: none; }
+
+.toc-list a {
+  display: flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 2px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.toc-list a::before {
+  content: '·';
+  font-family: "Courier New", monospace;
+  display: inline-block;
+  width: 1.1rem;
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--border-hi);
+  transition: content var(--ease), color var(--ease);
+}
+
+.toc-list a:hover {
+  color: var(--violet);
+  border-left-color: var(--violet-dim);
+}
+
+.toc-list a:hover::before { content: '▷'; color: var(--violet-dim); }
+
+.toc-list a.active {
+  color: var(--violet);
+  border-left-color: var(--violet);
+}
+
+.toc-list a.active::before { content: '▶'; color: var(--violet); }
+
+.toc-dir-name {
+  display: block;
+  padding: 0.75rem 0.65rem 0.2rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.toc-list .toc-list { padding-left: 0.75rem; }
