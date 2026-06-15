@@ -1,3 +1,4 @@
+import shutil
 import sys
 from pathlib import Path
 
@@ -13,6 +14,9 @@ _DIST_DIR = Path("dist")
 
 
 def main() -> int:
+    if _DIST_DIR.is_dir():
+        shutil.rmtree(_DIST_DIR)
+
     if _STATIC_DIR.is_dir():
         copy_folder(_STATIC_DIR, _DIST_DIR / "static")
 
