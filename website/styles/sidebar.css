@@ -1,9 +1,8 @@
 .sidebar {
   width: var(--sidebar-w);
   min-width: var(--sidebar-w);
-  background: var(--bg-alt);
-  border-right: 2px solid var(--violet-dim);
-  box-shadow: 2px 0 0 0 var(--border);
+  background: #111111;
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -18,58 +17,44 @@
   width: 0;
   min-width: 0;
   border-right-width: 0;
-  box-shadow: none;
 }
 
 .sidebar-header {
-  background: var(--violet-dim);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.45rem 0.65rem;
+  padding: 0.35rem 0.55rem;
   flex-shrink: 0;
-  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .site-name {
   font-family: "Courier New", monospace;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.25em;
-  color: #000;
+  letter-spacing: 0.18em;
+  color: var(--teal);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .toggle-btn {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  color: #000;
+  background: none;
+  border: none;
+  color: var(--text-muted);
   cursor: pointer;
   font-family: "Courier New", monospace;
-  font-size: 0.75rem;
-  padding: 0.05rem 0.35rem;
-  line-height: 1.5;
+  font-size: 0.7rem;
+  padding: 0 0.2rem;
+  line-height: 1;
   flex-shrink: 0;
-  transition: background var(--ease);
+  transition: color var(--ease);
 }
 
-.toggle-btn:hover { background: rgba(0, 0, 0, 0.45); }
-
-.sidebar-nav::before {
-  content: '─ PAGES ─────────────────────────────────';
-  display: block;
-  font-family: "Courier New", monospace;
-  font-size: 0.55rem;
-  color: var(--text-muted);
-  padding: 0.6rem 0.65rem 0.25rem;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  overflow: hidden;
-}
+.toggle-btn:hover { color: var(--text); }
 
 .sidebar-nav {
-  padding: 0;
+  padding: 0.3rem 0;
   overflow-y: auto;
   flex: 1;
 }
@@ -80,18 +65,17 @@
   left: 0.7rem;
   z-index: 50;
   display: none;
-  background: var(--violet-dim);
-  border: none;
-  color: #000;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
   cursor: pointer;
   font-family: "Courier New", monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.3rem 0.55rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.45rem;
   line-height: 1;
-  transition: background var(--ease);
+  transition: color var(--ease), border-color var(--ease);
 }
 
-.open-btn:hover { background: var(--violet); }
+.open-btn:hover { color: var(--text); border-color: var(--border-hi); }
 
 .open-btn.visible { display: block; }

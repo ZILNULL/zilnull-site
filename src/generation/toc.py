@@ -8,9 +8,12 @@ def _toc_dir(root: Path, path: Path, current_md: Path, lines: list[str]) -> None
 
     lines.append('<ul class="toc-list">')
     for d in dirs:
-        lines.append(f'<li><span class="toc-dir-name">{d.name}</span>')
+        lines.append('<li>')
+        lines.append(f'<details class="toc-folder" open>')
+        lines.append(f'<summary class="toc-dir-name">{d.name}</summary>')
         _toc_dir(root, d, current_md, lines)
-        lines.append("</li>")
+        lines.append('</details>')
+        lines.append('</li>')
     for f in files:
         href = "/" + f.relative_to(root).with_suffix(".html").as_posix()
         name = f.stem.replace("-", " ").replace("_", " ").title()

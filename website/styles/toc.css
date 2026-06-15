@@ -1,15 +1,16 @@
-.toc-list { list-style: none; }
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .toc-list a {
-  display: flex;
-  align-items: center;
-  padding: 0.28rem 0.65rem;
+  display: block;
+  padding: 0.15rem 0.55rem;
   color: var(--text-muted);
   text-decoration: none;
   font-family: "Courier New", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -17,40 +18,52 @@
   transition: color var(--ease), border-color var(--ease);
 }
 
-.toc-list a::before {
-  content: '·';
-  font-family: "Courier New", monospace;
-  display: inline-block;
-  width: 1.1rem;
-  flex-shrink: 0;
-  text-align: center;
-  color: var(--border-hi);
-  transition: content var(--ease), color var(--ease);
+.toc-list a:hover {
+  color: var(--text);
+  border-left-color: var(--border-hi);
 }
 
-.toc-list a:hover {
+.toc-list a.active {
   color: var(--violet);
   border-left-color: var(--violet-dim);
 }
 
-.toc-list a:hover::before { content: '▷'; color: var(--violet-dim); }
-
-.toc-list a.active {
-  color: var(--violet);
-  border-left-color: var(--violet);
+details.toc-folder {
+  margin: 0;
 }
 
-.toc-list a.active::before { content: '▶'; color: var(--violet); }
-
-.toc-dir-name {
-  display: block;
-  padding: 0.75rem 0.65rem 0.2rem;
+details.toc-folder > summary.toc-dir-name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
   font-family: "Courier New", monospace;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  color: var(--border-hi);
   white-space: nowrap;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: color var(--ease);
 }
 
-.toc-list .toc-list { padding-left: 0.75rem; }
+details.toc-folder > summary.toc-dir-name::-webkit-details-marker { display: none; }
+
+details.toc-folder > summary.toc-dir-name::before {
+  content: '▶';
+  font-size: 0.45rem;
+  flex-shrink: 0;
+  transition: transform var(--ease);
+}
+
+details.toc-folder[open] > summary.toc-dir-name::before {
+  transform: rotate(90deg);
+}
+
+details.toc-folder > summary.toc-dir-name:hover { color: var(--text-muted); }
+
+.toc-list .toc-list {
+  padding-left: 0.6rem;
+}
