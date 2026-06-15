@@ -4,4 +4,4 @@ __pycache__/
 *$py.class
 
 # Generated static site:
-# dist/
+dist/
