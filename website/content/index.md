@@ -16,6 +16,6 @@ Use the side bar and feel free to look around!
 
 ## Contact Me
 
-**bsky**: @theouterchaos.bsky.social
+**bsky**: [@theouterchaos.bsky.social](https://bsky.app/profile/theouterchaos.bsky.social)
 
-**X / Twitter**: @theouterchaos
+**X / Twitter**: [@theouterchaos](https://x.com/theouterchaos)

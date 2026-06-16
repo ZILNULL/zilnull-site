@@ -18,7 +18,7 @@ pre {
 }
 
 pre::before {
-  content: '◆  TERMINAL';
+  content: '◆  CODE';
   position: absolute;
   top: 0; left: 0; right: 0;
   background: #141414;

@@ -15,7 +15,7 @@ blockquote::before {
   font-size: 5.5rem;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--violet);
-  opacity: 0.28;
+  opacity: 0.50;
   line-height: 1;
   pointer-events: none;
   user-select: none;

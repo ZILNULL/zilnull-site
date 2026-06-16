@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing</title>
+  <link rel="stylesheet" href="/static/writing.css" />
+</head>
+<body>
+
+  <!-- Ambient UI glow -->
+  <div class="ui" aria-hidden="true"></div>
+
+  <!-- Corner labels (mirrored, like brackets on the screen) -->
+  <div class="category-label" id="categoryLabel">Short Stories</div>
+  <a class="home-link" href="/index.html">home</a>
+
+  <!-- Full-screen bookshelf -->
+  <div class="bookshelf">
+    <div class="shelf-track" id="shelfTrack">
+
+      <!-- ── Short Stories ──────────────────────────────────── -->
+      <section class="shelf-section" data-category="Short Stories">
+        <div class="shelf-row">
+          <a class="book" href="/short-stories/amo_ergo_sum.html"
+             style="--bh:84%;--bw:36px">
+            <span class="spine">Amo Ergo Sum</span>
+          </a>
+          <a class="book" href="/short-stories/do_ai_models_dream_of_love.html"
+             style="--bh:91%;--bw:42px">
+            <span class="spine">Do AI Models Dream of Love?</span>
+          </a>
+        </div>
+        <div class="shelf-row"></div>
+        <div class="shelf-row"></div>
+      </section>
+
+      <!-- ── Essays (empty) ────────────────────────────────── -->
+      <section class="shelf-section" data-category="Essays">
+        <div class="shelf-row"></div>
+        <div class="shelf-row"></div>
+        <div class="shelf-row"></div>
+      </section>
+
+      <!-- ── Poetry (empty) ────────────────────────────────── -->
+      <section class="shelf-section" data-category="Poetry">
+        <div class="shelf-row"></div>
+        <div class="shelf-row"></div>
+        <div class="shelf-row"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Floor: perspective plane with nav arrows painted on it -->
+  <div class="floor">
+    <div class="floor-plane">
+      <div class="floor-grid"></div>
+      <div class="floor-nav">
+        <button class="floor-arrow" id="prevBtn" aria-label="Previous">←</button>
+        <div class="floor-dots" id="floorDots"></div>
+        <button class="floor-arrow" id="nextBtn" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/writing.js"></script>
+</body>
+</html>
