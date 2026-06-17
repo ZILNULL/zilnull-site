@@ -5,3 +5,10 @@ __pycache__/
 
 # Generated static site:
 dist/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
