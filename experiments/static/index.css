@@ -1,41 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  overflow-y: auto;
   position: relative;
   max-width: 100vw;
   min-height: 200vh;
   background-color: #332244;
   background-image: linear-gradient(to bottom, #000000, #110022);
-}
-
-/* Foreground stuff */
-.ui {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;
-  pointer-events: none;
-}
-
-.ui::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  animation: ui-glow 3s ease-in-out infinite;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.6), transparent) top    / 100% 30px no-repeat,
-    linear-gradient(to top,    rgba(255,255,255,0.6), transparent) bottom / 100% 30px no-repeat,
-    linear-gradient(to right,  rgba(255,255,255,0.6), transparent) left   / 30px 100% no-repeat,
-    linear-gradient(to left,   rgba(255,255,255,0.6), transparent) right  / 30px 100% no-repeat;
-}
-
-@keyframes ui-glow {
-  0%, 100% { opacity: 0.3; }
-  50%      { opacity: 1; }
 }
 
 

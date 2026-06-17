@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="ui" aria-hidden="true"></div>
-  <div class="category-label" id="categoryLabel">Short Stories</div>
+  <div class="category-label" id="categoryLabel">{{ first_category }}</div>
   <div class="ui-buttons">
     <button class="ui-btn ui-btn--toggle" id="navToggle" data-tooltip="Toggle navigation" aria-label="Toggle navigation">👁</button>
     <nav class="ui-buttons-nav" id="uiNav">
@@ -20,32 +20,7 @@
 
   <div class="bookshelf">
     <div class="shelf-track" id="shelfTrack">
-      <section class="shelf-section" data-category="Short Stories">
-        <div class="shelf-row">
-          <a class="book" href="/writing/short-stories/amo_ergo_sum.html"
-             style="--bh:84%;--bw:36px">
-            <span class="spine">Amo Ergo Sum</span>
-          </a>
-          <a class="book" href="/writing/short-stories/do_ai_models_dream_of_love.html"
-             style="--bh:91%;--bw:42px">
-            <span class="spine">Do AI Models Dream of Love?</span>
-          </a>
-        </div>
-        <div class="shelf-row"></div>
-        <div class="shelf-row"></div>
-      </section>
-
-      <section class="shelf-section" data-category="Essays">
-        <div class="shelf-row"></div>
-        <div class="shelf-row"></div>
-        <div class="shelf-row"></div>
-      </section>
-
-      <section class="shelf-section" data-category="Poetry">
-        <div class="shelf-row"></div>
-        <div class="shelf-row"></div>
-        <div class="shelf-row"></div>
-      </section>
+{{ shelf_sections }}
     </div>
   </div>
 

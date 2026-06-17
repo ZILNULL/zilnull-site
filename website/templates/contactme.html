@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="/static/global.css" />
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+      font-family: "Monaco", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-container {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .contact-title {
+      font-size: 3rem;
+      font-style: italic;
+      letter-spacing: 0.2em;
+      margin-bottom: 48px;
+      color: #fff;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #aaa;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      transition: color 0.15s ease;
+    }
+
+    .contact-link:hover {
+      color: #fff;
+    }
+
+    .contact-link-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #555;
+      width: 80px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .contact-link:hover .contact-link-label {
+      color: #888;
+    }
+
+    .contact-link-handle {
+      color: #cc99ff;
+    }
+
+    .contact-link:hover .contact-link-handle {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="ui" aria-hidden="true"></div>
+
+  <div class="ui-buttons">
+    <button class="ui-btn ui-btn--toggle" id="navToggle" data-tooltip="Toggle navigation" aria-label="Toggle navigation">👁</button>
+    <nav class="ui-buttons-nav" id="uiNav">
+      <a class="ui-btn" href="/index.html" data-tooltip="Home">★</a>
+      <a class="ui-btn" href="/writing/" data-tooltip="Writing">✍</a>
+    </nav>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-title">Contact</div>
+    <div class="contact-links">
+      <a class="contact-link" href="https://bsky.app/profile/theouterchaos.bsky.social" target="_blank" rel="noopener">
+        <span class="contact-link-label">Bluesky</span>
+        <span class="contact-link-handle">@theouterchaos.bsky.social</span>
+      </a>
+      <a class="contact-link" href="https://x.com/theouterchaos" target="_blank" rel="noopener">
+        <span class="contact-link-label">X / Twitter</span>
+        <span class="contact-link-handle">@theouterchaos</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const uiNav     = document.getElementById('uiNav');
+    navToggle.addEventListener('click', () => uiNav.classList.toggle('open'));
+  </script>
+</body>
+</html>

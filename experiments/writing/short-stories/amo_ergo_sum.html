@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amo, Ergo Sum</title>
+  <link rel="stylesheet" href="/static/global.css" />
   <link rel="stylesheet" href="/static/text.css" />
 </head>
 <body>
 
   <div class="ui" aria-hidden="true"></div>
-
-  <a class="nav-back" href="/writing.html">← writing</a>
-  <a class="nav-home" href="/index.html">home</a>
+  <div class="ui-buttons">
+    <button class="ui-btn ui-btn--toggle" id="navToggle" data-tooltip="Toggle navigation" aria-label="Toggle navigation">👁</button>
+    <nav class="ui-buttons-nav" id="uiNav">
+      <a class="ui-btn" href="/writing.html" data-tooltip="Return">← </a>
+      <a class="ui-btn" href="/index.html" data-tooltip="Home">★</a>
+      <a class="ui-btn" href="/contactme.html" data-tooltip="Contact me">✉</a>
+    </nav>
+  </div>
 
   <main class="content">
     <h1>Amo, Ergo Sum</h1>
@@ -38,6 +44,11 @@
 
     <p>It is no wonder that, on the seventh day, <em>I</em> fell asleep.</p>
   </main>
-
+  
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const uiNav     = document.getElementById('uiNav');
+    navToggle.addEventListener('click', () => uiNav.classList.toggle('open'));
+  </script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ui {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.ui-buttons {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ui-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #069494;
+  border: 3px double white;
+  text-decoration: none;
+  color: white;
+  font-family: "Monaco", monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  transition: opacity 0.1s ease, background-color 0.1s ease;
+  user-select: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.ui-btn--toggle {
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  color: black;
+  background-color: #eeeeee;
+}
+
+.ui-btn:hover {
+  opacity: 0.75;
+  background-color: #f88379;
+}
+
+.ui-btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-family: "Monaco", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ui-btn[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+.ui-buttons-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s 0.25s;
+}
+
+.ui-buttons-nav.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+}
+
+.ui::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: ui-glow 3s ease-in-out infinite;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.6), transparent) top    / 100% 30px no-repeat,
+    linear-gradient(to top,    rgba(255,255,255,0.6), transparent) bottom / 100% 30px no-repeat,
+    linear-gradient(to right,  rgba(255,255,255,0.6), transparent) left   / 30px 100% no-repeat,
+    linear-gradient(to left,   rgba(255,255,255,0.6), transparent) right  / 30px 100% no-repeat;
+}
+
+@keyframes ui-glow {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1;   }
+}
+

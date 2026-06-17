@@ -1,5 +1,7 @@
 ---
 title: Do AI Models Dream of Love?
+book_height: 91%
+book_width: 42px
 ---
 
 # Do AI Models Dream of Love?

@@ -1,5 +1,7 @@
 ---
-title: Amo, Ergo Sum 
+title: Amo, Ergo Sum
+book_height: 84%
+book_width: 36px
 ---
 
 # Amo, Ergo Sum

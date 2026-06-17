@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>☆ Ai ★</title>
+  <title>{{ title }}</title>
   <link rel="stylesheet" href="/static/global.css" />
-  <link rel="stylesheet" href="/static/index.css" />
+  <link rel="stylesheet" href="/static/text.css" />
 </head>
 <body>
-  <div class="ui"></div>
-
+  <div class="ui" aria-hidden="true"></div>
   <div class="ui-buttons">
     <button class="ui-btn ui-btn--toggle" id="navToggle" data-tooltip="Toggle navigation" aria-label="Toggle navigation">👁</button>
     <nav class="ui-buttons-nav" id="uiNav">
-      <a class="ui-btn" href="/writing/" data-tooltip="Writing">✍</a>
+      <a class="ui-btn" href="/writing/" data-tooltip="Return">←</a>
+      <a class="ui-btn" href="/index.html" data-tooltip="Home">★</a>
       <a class="ui-btn" href="/contactme.html" data-tooltip="Contact me">✉</a>
     </nav>
   </div>
 
-  <div class="proto-eye">
-    <img src="/static/img/eye.png" />
-  </div>
-
-  <div class="world-container">
-    <a class="library world" href="/writing/">
-      <img class="bookshelf" src="/static/img/bookshelf.jpg" />
-      <span class="world-label">Writing</span>
-    </a>
-  </div>
-
-  <div class="footer">
-    <span>IN PROGRESS...</span>
-  </div>
+  <main class="content">
+    {{ content }}
+  </main>
 
   <script>
     const navToggle = document.getElementById('navToggle');
